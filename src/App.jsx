@@ -2,11 +2,8 @@ import "./App.css";
 
 function App() {
   const handleMouseMove = (e) => {
-    // console.log(e);
-
     for (const card of document.getElementsByClassName("card")) {
       const rect = card.getBoundingClientRect();
-      // console.log(rect);
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       card.style.setProperty("--mouse-x", `${x}px`);

@@ -21,7 +21,6 @@ body{
 .card{
   height: 260px;
   width: 300px;
-  /* background: var(--card-background); */
   border-radius: 10px;
   position: relative;
   background: var(--card-background);
