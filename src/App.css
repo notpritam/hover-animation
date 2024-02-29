@@ -1,0 +1,65 @@
+:root {
+  --bg-color: #0a0118;
+  --card-content-color: rgb(13, 11, 34);
+  --card-background : linear-gradient(180deg, rgba(169, 163, 194, .2) 0%, rgba(169, 163, 194, .048) 100%);
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.card{
+  height: 260px;
+  width: 300px;
+  /* background: var(--card-background); */
+  border-radius: 10px;
+  position: relative;
+  background: var(--card-background);
+}
+
+
+.card::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y) , rgba(157, 154, 165, 0.178), transparent 40%);
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+
+.card::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(172, 173, 180, 0.815), transparent 40%);
+  z-index: 1;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+
+}
+
+.card-content{
+  background-color: var(--card-content-color);
+  inset: 1px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: inherit;
+}
